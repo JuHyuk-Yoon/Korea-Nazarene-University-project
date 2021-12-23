@@ -61,7 +61,7 @@ public class cafe extends JFrame {
 			Class.forName(driver);
 			conn=DriverManager.getConnection(url, user, password);
 		} catch(Exception dbcerr) {
-			System.out.println("DB ¿¬°á ½ÇÆĞ : "+dbcerr);
+			System.out.println("DB ì—°ê²° ì‹¤íŒ¨ : "+dbcerr);
 		}
 	}
 		public static DecimalFormat df= new DecimalFormat("#.##");
@@ -72,21 +72,21 @@ public class cafe extends JFrame {
 		
 	static int totalcost=0;
 	
-	static String jeryocolNames[]= {"¿øµÎ","Ä«Æä½Ã·´","»çÀÌ´Ù","·¹¸ó","ÀÚ¸ù","À¯ÀÚ","¿ìÀ¯","¸Á°í","µş±â","ºí·çº£¸®"};
-	static String ordercolNames[]= {"È¸¿ø¹øÈ£","¸Ş´º","»çÀÌÁî","¼ö·®","¸Ş´º±İ¾×","ÇÒÀÎ±İ¾×","Ãß°¡±İ¾×","ÃæÀü±İ»ç¿ë¾×","±İ¾×"};
-	static String acccolNames[]= {"¼º¸í","È¸¿ø¹øÈ£","ÃæÀü±İ¾×","ÄíÆù"};
+	static String jeryocolNames[]= {"ì›ë‘","ì¹´í˜ì‹œëŸ½","ì‚¬ì´ë‹¤","ë ˆëª¬","ìëª½","ìœ ì","ìš°ìœ ","ë§ê³ ","ë”¸ê¸°","ë¸”ë£¨ë² ë¦¬"};
+	static String ordercolNames[]= {"íšŒì›ë²ˆí˜¸","ë©”ë‰´","ì‚¬ì´ì¦ˆ","ìˆ˜ëŸ‰","ë©”ë‰´ê¸ˆì•¡","í• ì¸ê¸ˆì•¡","ì¶”ê°€ê¸ˆì•¡","ì¶©ì „ê¸ˆì‚¬ìš©ì•¡","ê¸ˆì•¡"};
+	static String acccolNames[]= {"ì„±ëª…","íšŒì›ë²ˆí˜¸","ì¶©ì „ê¸ˆì•¡","ì¿ í°"};
 	static DefaultTableModel jeryomodel=new DefaultTableModel(jeryocolNames,0);
 	static DefaultTableModel costmodel=new DefaultTableModel(jeryocolNames,0);
 	
 	public static void jego() {
-		JFrame jego=new JFrame("Àç°í°ü¸®");
+		JFrame jego=new JFrame("ì¬ê³ ê´€ë¦¬");
 		jego.setBounds(100, 100, 1920, 1080);
 		jego.setVisible(true);
 		jego.getContentPane().setLayout(null);
 		
 
 		
-		JLabel title=new JLabel("Àç°íÇöÈ²");
+		JLabel title=new JLabel("ì¬ê³ í˜„í™©");
 		title.setBounds(20, 10, 70, 30);
 		jego.getContentPane().add(title);
 		JTable jt=new JTable(jeryomodel);
@@ -111,59 +111,59 @@ public class cafe extends JFrame {
 			
 			}
 		}catch(Exception tverr) {
-			System.out.println("µ¥ÀÌÅÍ ºÒ·¯¿À±â ¿À·ù : "+tverr);
+			System.out.println("ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸° ì˜¤ë¥˜ : "+tverr);
 		} finally {
 			try {
 				rs.close();
 				pstmt.close();
 				conn.close();
 			}catch(Exception tvcerr) {
-				System.out.println("µ¥ÀÌÅÍ ºÒ·¯¿À±â ´İ±â ¿À·ù : "+tvcerr);
+				System.out.println("ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸° ë‹«ê¸° ì˜¤ë¥˜ : "+tvcerr);
 			}
 		}
 		
 		
-		JLabel jumuntitle=new JLabel("Àç·áÁÖ¹®");
+		JLabel jumuntitle=new JLabel("ì¬ë£Œì£¼ë¬¸");
 		jumuntitle.setBounds(20, 400, 70, 30);
 		jego.getContentPane().add(jumuntitle);
 				
-		JButton wondoobtn=new JButton("¿øµÎ");
+		JButton wondoobtn=new JButton("ì›ë‘");
 		wondoobtn.setBounds(20, 440, 90, 30);
 		jego.getContentPane().add(wondoobtn);
 		
-		JButton cafesirupbtn=new JButton("Ä«Æä½Ã·´");
+		JButton cafesirupbtn=new JButton("ì¹´í˜ì‹œëŸ½");
 		cafesirupbtn.setBounds(120, 440, 90, 30);
 		jego.getContentPane().add(cafesirupbtn);
 		
-		JButton ciderbtn=new JButton("»çÀÌ´Ù");
+		JButton ciderbtn=new JButton("ì‚¬ì´ë‹¤");
 		ciderbtn.setBounds(220, 440, 90, 30);
 		jego.getContentPane().add(ciderbtn);
 		
-		JButton lemonbtn=new JButton("·¹¸ó");
+		JButton lemonbtn=new JButton("ë ˆëª¬");
 		lemonbtn.setBounds(320, 440, 90, 30);
 		jego.getContentPane().add(lemonbtn);
 		
-		JButton jamongbtn=new JButton("ÀÚ¸ù");
+		JButton jamongbtn=new JButton("ìëª½");
 		jamongbtn.setBounds(420, 440, 90, 30);
 		jego.getContentPane().add(jamongbtn);
 		
-		JButton ujabtn=new JButton("À¯ÀÚ");
+		JButton ujabtn=new JButton("ìœ ì");
 		ujabtn.setBounds(520, 440, 90, 30);
 		jego.getContentPane().add(ujabtn);
 		
-		JButton milkbtn=new JButton("¿ìÀ¯");
+		JButton milkbtn=new JButton("ìš°ìœ ");
 		milkbtn.setBounds(620, 440, 90, 30);
 		jego.getContentPane().add(milkbtn);
 		
-		JButton mangobtn=new JButton("¸Á°í");
+		JButton mangobtn=new JButton("ë§ê³ ");
 		mangobtn.setBounds(720, 440, 90, 30);
 		jego.getContentPane().add(mangobtn);
 		
-		JButton strowbarrybtn=new JButton("µş±â");
+		JButton strowbarrybtn=new JButton("ë”¸ê¸°");
 		strowbarrybtn.setBounds(820, 440, 90, 30);
 		jego.getContentPane().add(strowbarrybtn);	
 		
-		JButton bluebarrybtn=new JButton("ºí·çº£¸®");
+		JButton bluebarrybtn=new JButton("ë¸”ë£¨ë² ë¦¬");
 		bluebarrybtn.setBounds(920, 440, 90, 30);
 		jego.getContentPane().add(bluebarrybtn);
 
@@ -177,17 +177,17 @@ public class cafe extends JFrame {
 		JTextField jegocost=new JTextField();
 		jegocost.setBounds(740, 590, 80, 30);
 		jego.getContentPane().add(jegocost);
-		JLabel su=new JLabel("¼ö·®");
+		JLabel su=new JLabel("ìˆ˜ëŸ‰");
 		su.setBounds(670, 550, 100, 30);
 		jego.getContentPane().add(su);
-		JLabel cost=new JLabel("°³´ç°¡°İ");
+		JLabel cost=new JLabel("ê°œë‹¹ê°€ê²©");
 		cost.setBounds(750, 550, 100, 30);
 		jego.getContentPane().add(cost);
-		JButton ok=new JButton("°áÁ¤");
+		JButton ok=new JButton("ê²°ì •");
 		ok.setBounds(840, 590, 100, 30);
 		jego.getContentPane().add(ok);
 		
-		JButton order=new JButton("ÁÖ¹®");
+		JButton order=new JButton("ì£¼ë¬¸");
 		order.setBounds(960, 590, 100, 30);
 		jego.getContentPane().add(order);
 		jeryo.setEditable(false);
@@ -198,7 +198,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				jeryo.setText("¿øµÎ¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ì›ë‘ë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			
 		});
@@ -207,7 +207,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("Ä«Æä½Ã·´À» ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ì¹´í˜ì‹œëŸ½ì„ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			
 		});
@@ -216,7 +216,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("»çÀÌ´Ù¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ì‚¬ì´ë‹¤ë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -225,7 +225,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("·¹¸óÀ» ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ë ˆëª¬ì„ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -234,7 +234,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("ÀÚ¸ùÀ» ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ìëª½ì„ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -243,7 +243,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("À¯ÀÚ¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ìœ ìë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -252,7 +252,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("¿ìÀ¯¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ìš°ìœ ë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -261,7 +261,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("¸Á°í¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ë§ê³ ë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -270,7 +270,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("µş±â¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ë”¸ê¸°ë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });
@@ -279,7 +279,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				jeryo.setText("ºí·çº£¸®¸¦ ÁÖ¹®ÇÏ½Ç°Ç°¡¿ä? ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä.");
+				jeryo.setText("ë¸”ë£¨ë² ë¦¬ë¥¼ ì£¼ë¬¸í•˜ì‹¤ê±´ê°€ìš”? ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”.");
 			}
 			 
 		 });		
@@ -291,7 +291,7 @@ public class cafe extends JFrame {
 				String text=jeryo.getText();
 				int su=0;
 				int jeryocost=0;
-				if(text.contains("¿øµÎ")) {
+				if(text.contains("ì›ë‘")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 0);
 					jeryomodel.setValueAt(su, 0, 0);
@@ -300,7 +300,7 @@ public class cafe extends JFrame {
 					jegosu.setText(null);
 					jegocost.setText(null);
 				}
-				if(text.contains("Ä«Æä½Ã·´")) {
+				if(text.contains("ì¹´í˜ì‹œëŸ½")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 1);
 					jeryomodel.setValueAt(su, 0, 1);
@@ -309,7 +309,7 @@ public class cafe extends JFrame {
 					jegosu.setText(null);
 					jegocost.setText(null);
 				}
-				if(text.contains("»çÀÌ´Ù")) {
+				if(text.contains("ì‚¬ì´ë‹¤")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 2);
 					jeryomodel.setValueAt(su, 0, 2);
@@ -319,7 +319,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 
 				}
-				if(text.contains("·¹¸ó")) {
+				if(text.contains("ë ˆëª¬")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 3);
 					jeryomodel.setValueAt(su, 0, 3);
@@ -329,7 +329,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 					
 				}
-				if(text.contains("ÀÚ¸ù")) {
+				if(text.contains("ìëª½")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 4);
 					jeryomodel.setValueAt(su, 0, 4);
@@ -339,7 +339,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 
 				}
-				if(text.contains("À¯ÀÚ")) {
+				if(text.contains("ìœ ì")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					 su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 5);
 					 jeryomodel.setValueAt(su, 0, 5);
@@ -349,7 +349,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 
 				}
-				if(text.contains("¿ìÀ¯")) {
+				if(text.contains("ìš°ìœ ")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 6);
 					jeryomodel.setValueAt(su, 0, 6);
@@ -359,7 +359,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 
 				}
-				if(text.contains("¸Á°í")) {
+				if(text.contains("ë§ê³ ")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 7);
 					jeryomodel.setValueAt(su, 0, 7);
@@ -369,7 +369,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 
 				}
-				if(text.contains("µş±â")) {
+				if(text.contains("ë”¸ê¸°")) {
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 8);
 					jeryomodel.setValueAt(su, 0, 8);
@@ -379,7 +379,7 @@ public class cafe extends JFrame {
 					jegocost.setText(null);
 
 				}
-				if(text.contains("ºí·çº£¸®")){
+				if(text.contains("ë¸”ë£¨ë² ë¦¬")){
 					jeryocost=Integer.parseInt(jegocost.getText());
 					su=Integer.parseInt(jegosu.getText())+(int)jeryomodel.getValueAt(0, 9);
 					jeryomodel.setValueAt(su, 0, 9);
@@ -404,16 +404,16 @@ public class cafe extends JFrame {
 					pstmt1=conn.prepareStatement(costsql);
 					int cnt=pstmt.executeUpdate();
 					int cnt1=pstmt1.executeUpdate();
-					System.out.println("ÁÖ¹® ¼º°ø");
+					System.out.println("ì£¼ë¬¸ ì„±ê³µ");
 				}catch(Exception orderdberr) {
-					System.out.println("ÁÖ¹® DB Ã³¸® ¿À·ù : "+orderdberr);
+					System.out.println("ì£¼ë¬¸ DB ì²˜ë¦¬ ì˜¤ë¥˜ : "+orderdberr);
 				}finally {
 					try {
 						pstmt.close();
 						pstmt1.close();
 						conn.close();
 					}catch(Exception orderdbcerr) {
-						System.out.println("ÁÖ¹® DB Ã³¸® ´İ±â ¿À·ù : "+orderdbcerr);
+						System.out.println("ì£¼ë¬¸ DB ì²˜ë¦¬ ë‹«ê¸° ì˜¤ë¥˜ : "+orderdbcerr);
 					}
 				}
 			}
@@ -422,7 +422,7 @@ public class cafe extends JFrame {
 	}
 	
 	public static void account() {
-		JFrame acc=new JFrame("È¸¿ø°ü¸®");
+		JFrame acc=new JFrame("íšŒì›ê´€ë¦¬");
 		acc.setBounds(100, 100, 1920, 1080);
 		acc.setVisible(true);
 		acc.setLayout(null);
@@ -440,19 +440,19 @@ public class cafe extends JFrame {
 				accmodel.addRow(new Object[] {rs.getString("username"),rs.getInt("userno"),rs.getInt("chargecost"),rs.getInt("havecoupon")});
 			}
 		}catch(Exception viewerr) {
-			System.out.println("Á¶È¸¿À·ù : "+viewerr);
+			System.out.println("ì¡°íšŒì˜¤ë¥˜ : "+viewerr);
 		}finally {
 			try {
 				rs.close();
 				pstmt.close();
 				conn.close();
 			}catch(Exception viewdberr) {
-				System.out.println("Á¶È¸´İ±â¿À·ù : "+viewdberr);
+				System.out.println("ì¡°íšŒë‹«ê¸°ì˜¤ë¥˜ : "+viewdberr);
 			}
 		}
-		JLabel namelbl=new JLabel("¼º¸í");
-		JLabel acnlbl=new JLabel("È¸¿ø¹øÈ£");
-		JLabel chargecostlbl=new JLabel("ÃæÀü±İ¾×");
+		JLabel namelbl=new JLabel("ì„±ëª…");
+		JLabel acnlbl=new JLabel("íšŒì›ë²ˆí˜¸");
+		JLabel chargecostlbl=new JLabel("ì¶©ì „ê¸ˆì•¡");
 		
 		JTextField name=new JTextField();
 		JTextField number=new JTextField();
@@ -471,9 +471,9 @@ public class cafe extends JFrame {
 		acview.setBounds(1500, 5, 400, 600);
 		acc.add(acview);
 		
-		JButton accinsert=new JButton("È¸¿ø°¡ÀÔ");
-		JButton accupdate=new JButton("È¸¿ø¼öÁ´");
-		JButton accdelete=new JButton("È¸¿ø»èÁ¦");
+		JButton accinsert=new JButton("íšŒì›ê°€ì…");
+		JButton accupdate=new JButton("íšŒì›ìˆ˜ì¡");
+		JButton accdelete=new JButton("íšŒì›ì‚­ì œ");
 		
 		accinsert.setBounds(300, 800, 100, 100);
 		accupdate.setBounds(400, 800, 100, 100);
@@ -550,18 +550,18 @@ public class cafe extends JFrame {
 					
 					int cnt=pstmt.executeUpdate();
 					
-					System.out.println("È¸¿ø°¡ÀÔ¼º°ø");
+					System.out.println("íšŒì›ê°€ì…ì„±ê³µ");
 					name.setText(null);
 					number.setText(null);
 					chargecost.setText(null);
 				}catch(Exception inserr) {
-					System.out.println("È¸¿ø°¡ÀÔ¿À·ù : "+inserr);
+					System.out.println("íšŒì›ê°€ì…ì˜¤ë¥˜ : "+inserr);
 				} finally {
 					try {
 						pstmt.close();
 						conn.close();
 					}catch(Exception insdberr) {
-						System.out.println("È¸¿ø°¡ÀÔDBÃ³¸®¿À·ù : "+insdberr);
+						System.out.println("íšŒì›ê°€ì…DBì²˜ë¦¬ì˜¤ë¥˜ : "+insdberr);
 					}
 				}
 			}
@@ -578,7 +578,7 @@ public class cafe extends JFrame {
 					pstmt=conn.prepareStatement(updatequery);
 					
 					int cnt=pstmt.executeUpdate();
-					System.out.println("È¸¿ø¼öÁ¤¿Ï·á");
+					System.out.println("íšŒì›ìˆ˜ì •ì™„ë£Œ");
 					accmodel.setNumRows(0);
 		try {
 			accdb();
@@ -589,24 +589,24 @@ public class cafe extends JFrame {
 				accmodel.addRow(new Object[] {rs.getString("username"),rs.getInt("userno"),rs.getInt("chargecost"),rs.getInt("havecoupon")});
 			}
 		}catch(Exception viewerr) {
-			System.out.println("Á¶È¸¿À·ù : "+viewerr);
+			System.out.println("ì¡°íšŒì˜¤ë¥˜ : "+viewerr);
 		}finally {
 			try {
 				rs.close();
 				pstmt.close();
 				conn.close();
 			}catch(Exception viewdberr) {
-				System.out.println("Á¶È¸´İ±â¿À·ù : "+viewdberr);
+				System.out.println("ì¡°íšŒë‹«ê¸°ì˜¤ë¥˜ : "+viewdberr);
 			}
 		}
 				}catch(Exception upderr) {
-					System.out.println("È¸¿ø¼öÁ¤¿À·ù : "+upderr);
+					System.out.println("íšŒì›ìˆ˜ì •ì˜¤ë¥˜ : "+upderr);
 				} finally {
 					try {
 						pstmt.close();
 						conn.close();
 					}catch(Exception upddberr) {
-						System.out.println("È¸¿ø¼öÁ¤DBÃ³¸®¿À·ù : "+upddberr);
+						System.out.println("íšŒì›ìˆ˜ì •DBì²˜ë¦¬ì˜¤ë¥˜ : "+upddberr);
 					}
 				}
 				
@@ -625,18 +625,18 @@ public class cafe extends JFrame {
 					int cnt=pstmt.executeUpdate();
 					int row=accv.getSelectedRow();
 					accmodel.removeRow(row);
-					System.out.println("È¸¿ø»èÁ¦¿Ï·á");
+					System.out.println("íšŒì›ì‚­ì œì™„ë£Œ");
 					name.setText(null);
 					number.setText(null);
 					chargecost.setText(null);
 				}catch(Exception delerr) {
-					System.out.println("È¸¿ø»èÁ¦¿À·ù : "+delerr);
+					System.out.println("íšŒì›ì‚­ì œì˜¤ë¥˜ : "+delerr);
 				} finally {
 					try {
 						pstmt.close();
 						conn.close();
 					}catch(Exception deldberr) {
-						System.out.println("È¸¿ø»èÁ¦DBÃ³¸®¿À·ù : "+deldberr);
+						System.out.println("íšŒì›ì‚­ì œDBì²˜ë¦¬ì˜¤ë¥˜ : "+deldberr);
 					}
 				}
 			}
@@ -652,7 +652,7 @@ public class cafe extends JFrame {
 		static double bluebarryadecost=3500;
 		static double ujateacost=2000;
 	public static void order() {
-		JFrame order=new JFrame("ÁÖ¹®");
+		JFrame order=new JFrame("ì£¼ë¬¸");
 		order.setBounds(100, 100, 1920, 1080);
 		order.getContentPane().setLayout(null);
 		order.setVisible(true);
@@ -663,12 +663,12 @@ public class cafe extends JFrame {
 		op.setBounds(1200, 5, 700, 700);
 		order.getContentPane().add(op);
 
-		JLabel menulbl=new JLabel("¸Ş´º");
-		JLabel sizelbl=new JLabel("»çÀÌÁî");
-		JLabel sulbl=new JLabel("¼ö·®");
-		JLabel clbl=new JLabel("±İ¾×");
-		JLabel hm=new JLabel("ÃæÀü±İ»ç¿ë");
-		JLabel paylbl=new JLabel("ÃÑ¾×");
+		JLabel menulbl=new JLabel("ë©”ë‰´");
+		JLabel sizelbl=new JLabel("ì‚¬ì´ì¦ˆ");
+		JLabel sulbl=new JLabel("ìˆ˜ëŸ‰");
+		JLabel clbl=new JLabel("ê¸ˆì•¡");
+		JLabel hm=new JLabel("ì¶©ì „ê¸ˆì‚¬ìš©");
+		JLabel paylbl=new JLabel("ì´ì•¡");
 		
 		menulbl.setBounds(100, 900, 100, 100);
 		order.getContentPane().add(menulbl);
@@ -692,35 +692,35 @@ public class cafe extends JFrame {
 					ordermodel.addRow(new Object[] {rs.getInt("userno"),rs.getString("menu"),rs.getString("sizea"),rs.getInt("su"),rs.getInt("menupay"),rs.getInt("dc"),rs.getInt("addpay"),rs.getInt("chargemoney"),rs.getInt("pay")});
 					}
 			}catch(Exception overr) {
-				System.out.println("ÁÖ¹®³»¿ªÁ¶È¸¿À·ù : "+overr);
+				System.out.println("ì£¼ë¬¸ë‚´ì—­ì¡°íšŒì˜¤ë¥˜ : "+overr);
 			}finally {
 				try {
 					rs.close();
 					pstmt.close();
 					conn.close();
 				}catch(Exception ovdberr) {
-					System.out.println("ÁÖ¹®³»¿ªÁ¶È¸ DB Ã³¸® ¿À·ù : "+ovdberr);
+					System.out.println("ì£¼ë¬¸ë‚´ì—­ì¡°íšŒ DB ì²˜ë¦¬ ì˜¤ë¥˜ : "+ovdberr);
 				}
 			}
-		JButton amebtn=new JButton("¾Æ¸Ş¸®Ä«³ë");
+		JButton amebtn=new JButton("ì•„ë©”ë¦¬ì¹´ë…¸");
 		amebtn.setBounds(5, 5, 150, 30);
 		order.getContentPane().add(amebtn);
-		JButton cafelattebtn=new JButton("Ä«Æä¶ó¶¼");
+		JButton cafelattebtn=new JButton("ì¹´í˜ë¼ë–¼");
 		cafelattebtn.setBounds(5, 35, 150, 30);
 		order.getContentPane().add(cafelattebtn);
-		JButton lemonadebtn=new JButton("·¹¸ğ³×ÀÌµå");
+		JButton lemonadebtn=new JButton("ë ˆëª¨ë„¤ì´ë“œ");
 		lemonadebtn.setBounds(5, 65, 150, 30);
 		order.getContentPane().add(lemonadebtn);
-		JButton jamongadebtn=new JButton("ÀÚ¸ù¿¡ÀÌµå");
+		JButton jamongadebtn=new JButton("ìëª½ì—ì´ë“œ");
 		jamongadebtn.setBounds(5, 95, 150, 30);
 		order.getContentPane().add(jamongadebtn);
-		JButton mangoadebtn=new JButton("¸Á°í¿¡ÀÌµå");
+		JButton mangoadebtn=new JButton("ë§ê³ ì—ì´ë“œ");
 		mangoadebtn.setBounds(5, 125, 150, 30);
 		order.getContentPane().add(mangoadebtn);
-		JButton bluebarryadebtn=new JButton("ºí·çº£¸®¿¡ÀÌµå");
+		JButton bluebarryadebtn=new JButton("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ");
 		bluebarryadebtn.setBounds(5, 155, 150, 30);
 		order.getContentPane().add(bluebarryadebtn);
-		JButton ujateabtn=new JButton("À¯ÀÚÂ÷");
+		JButton ujateabtn=new JButton("ìœ ìì°¨");
 		ujateabtn.setBounds(5, 180, 150, 30);
 		order.getContentPane().add(ujateabtn);
 		JTextField menu=new JTextField();
@@ -742,7 +742,7 @@ public class cafe extends JFrame {
 		JTextField addpay=new JTextField("0");
 		addpay.setBounds(1100, 900, 100, 100);
 		order.getContentPane().add(addpay);
-		JLabel addpaylbl=new JLabel("Ãß°¡±İ¾×");
+		JLabel addpaylbl=new JLabel("ì¶”ê°€ê¸ˆì•¡");
 		addpaylbl.setBounds(1035, 900, 100, 100);
 		order.getContentPane().add(addpaylbl);
 		JTextField chargecost=new JTextField("0");
@@ -757,7 +757,7 @@ public class cafe extends JFrame {
 		JButton plussu=new JButton("+");
 		plussu.setBounds(610, 930, 60, 50);
 		order.getContentPane().add(plussu);
-		JLabel dclbl=new JLabel("ÇÒÀÎ±İ¾×");
+		JLabel dclbl=new JLabel("í• ì¸ê¸ˆì•¡");
 		dclbl.setBounds(840, 900, 100, 100);
 		order.getContentPane().add(dclbl);
 		JRadioButton s=new JRadioButton("S");
@@ -776,18 +776,18 @@ public class cafe extends JFrame {
 		order.getContentPane().add(s);
 		order.getContentPane().add(m);
 		order.getContentPane().add(l);
-		JLabel cpulbl=new JLabel("È¸¿ø¹øÈ£");
+		JLabel cpulbl=new JLabel("íšŒì›ë²ˆí˜¸");
 		cpulbl.setBounds(730, 730, 100, 70);
 		order.getContentPane().add(cpulbl);
 		
 		JTextField number=new JTextField();
 		number.setBounds(800, 730, 100, 70);
 		order.getContentPane().add(number);
-		JButton cpuchk=new JButton("ÃæÀü±İ¾×Á¶È¸");
+		JButton cpuchk=new JButton("ì¶©ì „ê¸ˆì•¡ì¡°íšŒ");
 		cpuchk.setBounds(900, 730, 150, 70);
 		order.getContentPane().add(cpuchk);
 		
-		JLabel ccv=new JLabel("ÇöÀçÃæÀü±İ");
+		JLabel ccv=new JLabel("í˜„ì¬ì¶©ì „ê¸ˆ");
 		ccv.setBounds(820, 790, 100, 70);
 		order.getContentPane().add(ccv);
 		JTextField chargecostview=new JTextField();
@@ -800,7 +800,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				menu.setText("¾Æ¸Ş¸®Ä«³ë");
+				menu.setText("ì•„ë©”ë¦¬ì¹´ë…¸");
 			}
 			
 		});
@@ -809,7 +809,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				menu.setText("Ä«Æä¶ó¶¼");
+				menu.setText("ì¹´í˜ë¼ë–¼");
 			}
 			
 		});
@@ -818,7 +818,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				menu.setText("·¹¸ğ³×ÀÌµå");
+				menu.setText("ë ˆëª¨ë„¤ì´ë“œ");
 			}
 			
 		});
@@ -827,7 +827,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				menu.setText("ÀÚ¸ù¿¡ÀÌµå");
+				menu.setText("ìëª½ì—ì´ë“œ");
 			}
 			
 		});
@@ -836,7 +836,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
-				menu.setText("¸Á°í¿¡ÀÌµå");
+				menu.setText("ë§ê³ ì—ì´ë“œ");
 			}
 			
 		});
@@ -845,7 +845,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				menu.setText("ºí·çº£¸®¿¡ÀÌµå");
+				menu.setText("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ");
 			}
 			
 		});
@@ -854,7 +854,7 @@ public class cafe extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				menu.setText("À¯ÀÚÂ÷");
+				menu.setText("ìœ ìì°¨");
 			}
 			
 		});
@@ -899,7 +899,7 @@ public class cafe extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				msu=msu-1;
-				if(menu.getText().contains("¾Æ¸Ş¸®Ä«³ë")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ì•„ë©”ë¦¬ì¹´ë…¸")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					addpay.setText(null);
@@ -907,14 +907,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("¾Æ¸Ş¸®Ä«³ë")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ì•„ë©”ë¦¬ì¹´ë…¸")&&size.getText().contains("M")) {
 					cost.setText(null);
 					dc.setText(null);
 					addpay.setText(null);
 					cost.setText(df.format(amecost*msu));
 					su.setText(df.format(msu)); 
 				}
-				if(menu.getText().contains("¾Æ¸Ş¸®Ä«³ë")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ì•„ë©”ë¦¬ì¹´ë…¸")&&size.getText().contains("L")) {
 					cost.setText(null);
 					dc.setText(null);
 					addpay.setText(null);
@@ -923,7 +923,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 				}
 				
-				if(menu.getText().contains("Ä«Æä¶ó¶¼")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ì¹´í˜ë¼ë–¼")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -931,14 +931,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("Ä«Æä¶ó¶¼")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ì¹´í˜ë¼ë–¼")&&size.getText().contains("M")) {
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(null);
 					cost.setText(df.format(cafecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("Ä«Æä¶ó¶¼")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ì¹´í˜ë¼ë–¼")&&size.getText().contains("L")) {
 					cost.setText(null);
 					dc.setText(null);
 					addpay.setText(null);
@@ -946,7 +946,7 @@ public class cafe extends JFrame {
 					addpay.setText(df.format((cafecost*0.8)*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("·¹¸ğ³×ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ë ˆëª¨ë„¤ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -954,14 +954,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("·¹¸ğ³×ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ë ˆëª¨ë„¤ì´ë“œ")&&size.getText().contains("M")) {
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(null);
 					cost.setText(df.format(lemonadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("·¹¸ğ³×ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ë ˆëª¨ë„¤ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -969,7 +969,7 @@ public class cafe extends JFrame {
 					addpay.setText(df.format((lemonadecost*0.8)*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("ÀÚ¸ù¿¡ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ìëª½ì—ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -977,14 +977,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("ÀÚ¸ù¿¡ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ìëª½ì—ì´ë“œ")&&size.getText().contains("M")) {
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(null);
 					cost.setText(df.format(jamongadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("ÀÚ¸ù¿¡ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ìëª½ì—ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -992,7 +992,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((jamongadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("¸Á°í¿¡ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ë§ê³ ì—ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1000,14 +1000,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("¸Á°í¿¡ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ë§ê³ ì—ì´ë“œ")&&size.getText().contains("M")) {
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(null);
 					cost.setText(df.format(mangoadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("¸Á°í¿¡ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ë§ê³ ì—ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1015,7 +1015,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((mangoadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("ºí·çº£¸®¿¡ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1023,14 +1023,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("ºí·çº£¸®¿¡ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")&&size.getText().contains("M")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(df.format(bluebarryadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("ºí·çº£¸®¿¡ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1038,7 +1038,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((bluebarryadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("À¯ÀÚÂ÷")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ìœ ìì°¨")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1046,14 +1046,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("À¯ÀÚÂ÷")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ìœ ìì°¨")&&size.getText().contains("M")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(df.format(ujateacost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("À¯ÀÚÂ÷")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ìœ ìì°¨")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1069,7 +1069,7 @@ public class cafe extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				msu=msu+1;
-				if(menu.getText().contains("¾Æ¸Ş¸®Ä«³ë")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ì•„ë©”ë¦¬ì¹´ë…¸")&&size.getText().contains("S")) {
 					cost.setText(null);
 					su.setText(null);
 					dc.setText(null);
@@ -1077,14 +1077,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("¾Æ¸Ş¸®Ä«³ë")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ì•„ë©”ë¦¬ì¹´ë…¸")&&size.getText().contains("M")) {
 					cost.setText(null);
 					su.setText(null);
 					cost.setText(df.format(amecost*msu));
 					su.setText(df.format(msu));
 					
 				}
-				if(menu.getText().contains("¾Æ¸Ş¸®Ä«³ë")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ì•„ë©”ë¦¬ì¹´ë…¸")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1092,20 +1092,20 @@ public class cafe extends JFrame {
 					addpay.setText(df.format((amecost*0.8)*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("Ä«Æä¶ó¶¼")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ì¹´í˜ë¼ë–¼")&&size.getText().contains("S")) {
 					cost.setText(null);
 					su.setText(null);
 					cost.setText(df.format(cafecost*msu));
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("Ä«Æä¶ó¶¼")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ì¹´í˜ë¼ë–¼")&&size.getText().contains("M")) {
 					cost.setText(null);
 					su.setText(null);
 					cost.setText(df.format(cafecost*msu));
 					su.setText(df.format(msu));
 				} 
-				if(menu.getText().contains("Ä«Æä¶ó¶¼")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ì¹´í˜ë¼ë–¼")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1113,7 +1113,7 @@ public class cafe extends JFrame {
 					addpay.setText(df.format((cafecost*0.8)*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("·¹¸ğ³×ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ë ˆëª¨ë„¤ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					su.setText(null);
 					dc.setText(null);
@@ -1121,14 +1121,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("·¹¸ğ³×ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ë ˆëª¨ë„¤ì´ë“œ")&&size.getText().contains("M")) {
 					cost.setText(null);
 					su.setText(null);
 					dc.setText(null);
 					cost.setText(df.format(lemonadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("·¹¸ğ³×ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ë ˆëª¨ë„¤ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1136,7 +1136,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((lemonadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("ÀÚ¸ù¿¡ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ìëª½ì—ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1144,14 +1144,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("ÀÚ¸ù¿¡ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ìëª½ì—ì´ë“œ")&&size.getText().contains("M")) {
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(null);
 					cost.setText(df.format(jamongadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("ÀÚ¸ù¿¡ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ìëª½ì—ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1159,7 +1159,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((jamongadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("¸Á°í¿¡ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ë§ê³ ì—ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1167,14 +1167,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("¸Á°í¿¡ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ë§ê³ ì—ì´ë“œ")&&size.getText().contains("M")) {
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(null);
 					cost.setText(df.format(mangoadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("¸Á°í¿¡ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ë§ê³ ì—ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1182,7 +1182,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((mangoadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("ºí·çº£¸®¿¡ÀÌµå")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1190,14 +1190,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("ºí·çº£¸®¿¡ÀÌµå")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")&&size.getText().contains("M")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(df.format(bluebarryadecost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("ºí·çº£¸®¿¡ÀÌµå")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1205,7 +1205,7 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					addpay.setText(df.format((bluebarryadecost*0.8)*msu));
 				}
-				if(menu.getText().contains("À¯ÀÚÂ÷")&&size.getText().contains("S")) {
+				if(menu.getText().contains("ìœ ìì°¨")&&size.getText().contains("S")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
@@ -1213,14 +1213,14 @@ public class cafe extends JFrame {
 					su.setText(df.format(msu));
 					dc.setText(df.format(1000*msu));
 				}
-				if(menu.getText().contains("À¯ÀÚÂ÷")&&size.getText().contains("M")) {
+				if(menu.getText().contains("ìœ ìì°¨")&&size.getText().contains("M")) {
 					cost.setText(null);
 					dc.setText(null);
 					su.setText(null);
 					cost.setText(df.format(ujateacost*msu));
 					su.setText(df.format(msu));
 				}
-				if(menu.getText().contains("À¯ÀÚÂ÷")&&size.getText().contains("L")) {
+				if(menu.getText().contains("ìœ ìì°¨")&&size.getText().contains("L")) {
 					cost.setText(null);
 					su.setText(null);
 					addpay.setText(null);
@@ -1250,19 +1250,19 @@ public class cafe extends JFrame {
 						chargecost=rs.getInt("chargecost");
 					}
 					if(n==num){
-						System.out.println("Á¶È¸¼º°ø");
+						System.out.println("ì¡°íšŒì„±ê³µ");
 						chargecostview.setText(null);
 						chargecostview.setText(Integer.toString(chargecost));
 					}
 				}catch(Exception chkerr) {
-					System.out.println("È¸¿ø°Ë»ö ¿À·ù : "+chkerr);
+					System.out.println("íšŒì›ê²€ìƒ‰ ì˜¤ë¥˜ : "+chkerr);
 				}finally {
 					try {
 						rs.close();
 						pstmt.close();
 						conn.close();
 					}catch(Exception chkdberr) {
-						System.out.println("È¸¿ø°Ë»öDBÃ³¸®¿À·ù : "+chkdberr);
+						System.out.println("íšŒì›ê²€ìƒ‰DBì²˜ë¦¬ì˜¤ë¥˜ : "+chkdberr);
 					}
 				}
 			}
@@ -1278,7 +1278,7 @@ public class cafe extends JFrame {
 		int mangoadecost=3000;
 		int bluebarryadecost=3500;
 		int ujateacost=2000;
-		JButton orderbtn=new JButton("ÁÖ¹®");
+		JButton orderbtn=new JButton("ì£¼ë¬¸");
 		orderbtn.setBounds(1680, 900, 100, 70);
 		order.getContentPane().add(orderbtn);
 		
@@ -1298,7 +1298,7 @@ public class cafe extends JFrame {
 						String order="insert into cafeorder values(?,?,?,?,?,?,?,?,?)";
 						String updcc="update cafeuser set chargecost=chargecost-"+ach+"where userno="+number.getText();
 					accdb();
-					if(text.contains("¾Æ¸Ş¸®Ä«³ë")) {
+					if(text.contains("ì•„ë©”ë¦¬ì¹´ë…¸")) {
 						String wondoominus="update jego set wondoo=wondoo-"+su.getText();
 						String wondoominuslarge="update jego set wondoo=wondoo-"+Integer.parseInt(su.getText())*2;
 						accdb();
@@ -1326,7 +1326,7 @@ public class cafe extends JFrame {
 							chargecostview.setText(Integer.toString(Integer.parseInt(chargecostview.getText())-ach));
 						}
 					}
-					if(text.contains("Ä«Æä¶ó¶¼")) {
+					if(text.contains("ì¹´í˜ë¼ë–¼")) {
 						String cafeminus= "update jego set cafesirup=cafesirup-"+su.getText()+", milk=milk-"+su.getText();
 						String cafeminuslarge="update jego set cafesirup=cafesirup-"+Integer.parseInt(su.getText())*2+", milk=milk-"+Integer.parseInt(su.getText())*2;
 				
@@ -1354,7 +1354,7 @@ public class cafe extends JFrame {
 							chargecostview.setText(Integer.toString(Integer.parseInt(chargecostview.getText())-ach));
 						}
 					}
-					if(text.contains("·¹¸ğ³×ÀÌµå")) {
+					if(text.contains("ë ˆëª¨ë„¤ì´ë“œ")) {
 						String lemonademinus="update jego set lemon=lemon-"+Integer.parseInt(su.getText())*2+", cider=cider-"+su.getText();
 						String lemonademinuslarge="update jego set lemon=lemon-"+Integer.parseInt(su.getText())*2+", cider=cider-"+su.getText();
 						
@@ -1382,7 +1382,7 @@ public class cafe extends JFrame {
 							pay.setText(Integer.toString((asu*acost+add)-adc-ach));
 						}
 					}
-					if(text.contains("ÀÚ¸ù¿¡ÀÌµå")) {
+					if(text.contains("ìëª½ì—ì´ë“œ")) {
 						String jamongademinus="update jego set jamong=jamong-"+Integer.parseInt(su.getText())*2+", cider=cider-"+su.getText();
 						String jamongademinuslarge="update jego set jamong=jamong-"+Integer.parseInt(su.getText())*3+", cider=cider-"+su.getText();
 						
@@ -1411,7 +1411,7 @@ public class cafe extends JFrame {
 							chargecostview.setText(Integer.toString(Integer.parseInt(chargecostview.getText())-ach));
 						}
 					}
-						if(text.contains("¸Á°í¿¡ÀÌµå")) {
+						if(text.contains("ë§ê³ ì—ì´ë“œ")) {
 							String mangoademinus="update jego set mango=mango-"+Integer.parseInt(su.getText())*2+", cider=cider-"+su.getText();
 							String mangoademinuslarge="update jego set mango=mango-"+Integer.parseInt(su.getText())*3+", cider=cider-"+su.getText();
 							
@@ -1440,7 +1440,7 @@ public class cafe extends JFrame {
 								chargecostview.setText(Integer.toString(Integer.parseInt(chargecostview.getText())-ach));
 							}
 						}
-						if(text.contains("ºí·çº£¸®¿¡ÀÌµå")) {
+						if(text.contains("ë¸”ë£¨ë² ë¦¬ì—ì´ë“œ")) {
 							String bluebarryademinus="update jego set bluebarry=bluebarry-"+Integer.parseInt(su.getText())*2+", cider=cider-"+su.getText();
 							String bluebarryademinuslarge="update jego set bluebarry=bluebarry-"+Integer.parseInt(su.getText())*3+", cider=cider-"+su.getText();
 							
@@ -1469,7 +1469,7 @@ public class cafe extends JFrame {
 								chargecostview.setText(Integer.toString(Integer.parseInt(chargecostview.getText())-ach));
 							}
 						}
-						if(text.contains("À¯ÀÚÂ÷")) {
+						if(text.contains("ìœ ìì°¨")) {
 							String ujateaminus="update jego set uja=uja-"+Integer.parseInt(su.getText());
 							String ujateaminuslarge="update jego set uja=uja-"+Integer.parseInt(su.getText())*2;
 							
@@ -1498,7 +1498,7 @@ public class cafe extends JFrame {
 								chargecostview.setText(Integer.toString(Integer.parseInt(chargecostview.getText())-ach));
 							}
 						}
-					//DB Äõ¸® ´ëÀÔ
+					//DB ì¿¼ë¦¬ ëŒ€ì…
 						pstmt1.setInt(1, Integer.parseInt(number.getText()));
 						pstmt1.setString(2, menu.getText());
 						pstmt1.setString(3, size.getText());
@@ -1514,7 +1514,7 @@ public class cafe extends JFrame {
 					int cnt1=pstmt1.executeUpdate();
 					int cnt2=pstmt2.executeUpdate();
 					
-					System.out.println("ÁÖ¹®¼º°ø");
+					System.out.println("ì£¼ë¬¸ì„±ê³µ");
 					number.setText(null);
 					menu.setText(null);
 					size.setText(null);
@@ -1525,7 +1525,7 @@ public class cafe extends JFrame {
 					chargecost.setText("0");
 					pay.setText(null);
 				}catch(Exception ordererr) {
-					System.out.println("ÁÖ¹® ¿À·ù : "+ordererr);
+					System.out.println("ì£¼ë¬¸ ì˜¤ë¥˜ : "+ordererr);
 				}finally {
 					try {
 						pstmt.close();
@@ -1533,7 +1533,7 @@ public class cafe extends JFrame {
 						if(pstmt2!=null)pstmt2.close();
 						conn.close();
 					}catch(Exception orderdberr) {
-						System.out.println("ÁÖ¹® DBÃ³¸® ¿À·ù : "+orderdberr);
+						System.out.println("ì£¼ë¬¸ DBì²˜ë¦¬ ì˜¤ë¥˜ : "+orderdberr);
 					}
 				}
 			}
@@ -1551,16 +1551,16 @@ public class cafe extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
-		setTitle("Ä«Æä°ü¸® ÇÁ·Î±×·¥");
-		JButton jegoorder = new JButton("Àç°í°ü¸®");
+		setTitle("ì¹´í˜ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		JButton jegoorder = new JButton("ì¬ê³ ê´€ë¦¬");
 		jegoorder.setBounds(12, 10, 97, 23);
 		contentPane.add(jegoorder);		
-		JButton creuser = new JButton("È¸¿ø°ü¸®");
+		JButton creuser = new JButton("íšŒì›ê´€ë¦¬");
 		creuser.setBounds(12, 40, 97, 23);
 		contentPane.add(creuser);
 		
 		
-		JButton menuorder = new JButton("ÁÖ¹®");
+		JButton menuorder = new JButton("ì£¼ë¬¸");
 		menuorder.setBounds(12, 73, 97, 23);
 		contentPane.add(menuorder);
 
